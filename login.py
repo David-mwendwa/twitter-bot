@@ -1,17 +1,11 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver import ActionChains
-from selenium import webdriver
 import time
 
-path = 'C:\Program Files (x86)\chromedriver.exe'
-driver = webdriver.Chrome(path)
+# path = 'C:\Program Files (x86)\chromedriver.exe'
+# driver = webdriver.Chrome(path)
 
 
-def login_func(twitter_email, twitter_password, twitter_phone):
+def login_func(driver, twitter_email, twitter_password, twitter_phone):
     try:
         driver.get('https://twitter.com/login')
         driver.implicitly_wait(5)
@@ -54,3 +48,5 @@ def login_func(twitter_email, twitter_password, twitter_phone):
 
     except Exception as e:
         print(e)
+
+
